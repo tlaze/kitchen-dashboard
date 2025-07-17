@@ -2,18 +2,20 @@
   <div class="min-h-screen bg-white p-6">
     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-6">
       <h1 class="text-3xl font-bold">Completed Orders</h1>
-      <router-link
-        to="/analytics"
-        class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded text-center"
-      >
-        View Analytics
-      </router-link>
-      <router-link
-        to="/"
-        class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-center w-full sm:w-auto"
-      >
-        Back to Kitchen
-      </router-link>
+      <div class="flex flex-col sm:flex-row gap-2">
+        <router-link
+          to="/analytics"
+          class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded text-center"
+        >
+          View Analytics
+        </router-link>
+        <router-link
+          to="/"
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-center w-full sm:w-auto"
+        >
+          Back to Kitchen
+        </router-link>
+      </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
