@@ -8,7 +8,10 @@ export const useOrderStore = defineStore(
     const completedOrders = ref([])
 
     function addOrder(order) {
-      activeOrders.value.push(order)
+      const exists = activeOrders.value.some((o) => o.id === order.id)
+      if (!exists) {
+        activeOrders.value.push(order)
+      }
     }
 
     function markOrderReady(orderId) {
