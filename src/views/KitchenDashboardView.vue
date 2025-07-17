@@ -1,18 +1,13 @@
 <script setup>
 import { useOrderStore } from '/src/stores/orderStore'
 import { onMounted } from 'vue'
-
-onMounted(() => {
-  if (orderStore.activeOrders.length === 0) {
-    orderStore.addOrder({
-      id: Date.now(),
-      items: ['Burger', 'Fries', 'Coke'],
-      status: 'pending',
-    })
-  }
-})
+import { socket } from '../socket'
 
 const orderStore = useOrderStore()
+
+socket.on('new-order', (order) => {
+  orderStore.addOrder(order)
+})
 
 function markReady(orderId) {
   orderStore.markOrderReady(orderId)

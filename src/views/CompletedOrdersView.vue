@@ -11,13 +11,13 @@
       <div
         v-for="order in orderStore.completedOrders"
         :key="order.id"
-        class="bg-gray-100 border border-gray-300 rounded-lg p-4 shadow"
+        class="bg-red-300 border border-red-800 rounded-lg p-4 shadow"
       >
         <h2 class="text-xl font-semibold mb-2">Order #{{ order.id }}</h2>
         <ul class="mb-2">
           <li v-for="item in order.items" :key="item">• {{ item }}</li>
         </ul>
-        <p class="text-sm text-gray-500 mb-4">
+        <p class="text-sm text-white mb-4">
           Completed at: {{ new Date(order.completedAt).toLocaleTimeString() }}
         </p>
         <button
