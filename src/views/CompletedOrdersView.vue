@@ -18,7 +18,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
-        v-for="order in orderStore.completedOrders"
+        v-for="order in [...orderStore.completedOrders].reverse()"
         :key="order.id"
         class="bg-red-300 border border-red-800 rounded-lg p-4 shadow"
       >
