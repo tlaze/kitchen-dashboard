@@ -6,6 +6,11 @@ const routes = [
     name: 'Dashboard',
     component: () => import('../views/KitchenDashboardView.vue'),
   },
+  {
+    path: '/completed',
+    name: 'CompletedOrders',
+    component: () => import('../views/CompletedOrdersView.vue'),
+  },
 ]
 
 const router = createRouter({
