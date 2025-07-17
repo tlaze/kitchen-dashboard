@@ -3,8 +3,14 @@
     <div class="flex justify-between items-center mb-6">
       <h1 class="text-3xl font-bold">Kitchen Dashboard</h1>
       <router-link
-        to="/completed"
+        to="/analytics"
         class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded"
+      >
+        View Analytics
+      </router-link>
+      <router-link
+        to="/completed"
+        class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 text-sm md:px-4 md:py-2 md:text-base rounded"
       >
         View Completed Orders
       </router-link>

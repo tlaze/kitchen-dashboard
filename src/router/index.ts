@@ -11,6 +11,11 @@ const routes = [
     name: 'CompletedOrders',
     component: () => import('../views/CompletedOrdersView.vue'),
   },
+  {
+    path: '/analytics',
+    name: 'Analytics',
+    component: () => import('../views/AnalyticsView.vue'),
+  },
 ]
 
 const router = createRouter({
