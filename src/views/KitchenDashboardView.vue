@@ -1,23 +1,3 @@
-<script setup>
-import { useOrderStore } from '/src/stores/orderStore'
-import { onMounted } from 'vue'
-import { socket } from '../socket'
-
-const orderStore = useOrderStore()
-
-socket.on('new-order', (order) => {
-  orderStore.addOrder(order)
-})
-
-function markReady(orderId) {
-  orderStore.markOrderReady(orderId)
-}
-
-function removeOrder(orderId) {
-  orderStore.completeOrder(orderId)
-}
-</script>
-
 <template>
   <div class="min-h-screen bg-gray-100 p-6">
     <div class="flex justify-between items-center mb-6">
@@ -64,3 +44,22 @@ function removeOrder(orderId) {
     </div>
   </div>
 </template>
+<script setup>
+import { useOrderStore } from '/src/stores/orderStore'
+import { onMounted } from 'vue'
+import { socket } from '../socket'
+
+const orderStore = useOrderStore()
+
+socket.on('new-order', (order) => {
+  orderStore.addOrder(order)
+})
+
+function markReady(orderId) {
+  orderStore.markOrderReady(orderId)
+}
+
+function removeOrder(orderId) {
+  orderStore.completeOrder(orderId)
+}
+</script>
