@@ -7,21 +7,25 @@
       </router-link>
     </div>
 
-    <div v-if="completed.length === 0" class="text-gray-500 text-lg">No completed orders yet.</div>
-
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
-        v-for="order in completed"
+        v-for="order in orderStore.completedOrders"
         :key="order.id"
-        class="rounded-lg shadow-md p-4 bg-green-100 border border-green-300"
+        class="bg-gray-100 border border-gray-300 rounded-lg p-4 shadow"
       >
         <h2 class="text-xl font-semibold mb-2">Order #{{ order.id }}</h2>
-        <ul>
-          <li v-for="item in order.items" :key="item" class="text-gray-700">• {{ item }}</li>
+        <ul class="mb-2">
+          <li v-for="item in order.items" :key="item">• {{ item }}</li>
         </ul>
-        <p class="text-xs text-gray-500 mt-2">
+        <p class="text-sm text-gray-500 mb-4">
           Completed at: {{ new Date(order.completedAt).toLocaleTimeString() }}
         </p>
+        <button
+          @click="orderStore.reopenOrder(order.id)"
+          class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-1 rounded"
+        >
+          Send Back to Kitchen
+        </button>
       </div>
     </div>
   </div>
@@ -29,6 +33,5 @@
 
 <script setup>
 import { useOrderStore } from '/src/stores/orderStore'
-
-const { completedOrders: completed } = useOrderStore()
+const orderStore = useOrderStore()
 </script>

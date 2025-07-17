@@ -23,11 +23,21 @@ export const useOrderStore = defineStore('order', () => {
     }
   }
 
+  function reopenOrder(orderId) {
+    const index = completedOrders.value.findIndex((o) => o.id === orderId)
+    if (index !== -1) {
+      const [order] = completedOrders.value.splice(index, 1)
+      order.status = 'pending' // reset status if needed
+      activeOrders.value.push(order)
+    }
+  }
+
   return {
     activeOrders,
     completedOrders,
     addOrder,
     markOrderReady,
     completeOrder,
+    reopenOrder,
   }
 })
