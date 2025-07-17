@@ -23,6 +23,7 @@
         ]"
       >
         <h2 class="text-xl font-semibold mb-2">Order #{{ order.id }}</h2>
+        <p class="text-sm text-gray-500 mb-2">Placed at: {{ formatTime(order.createdAt) }}</p>
         <ul class="mb-4">
           <li v-for="item in order.items" :key="item" class="text-gray-700">• {{ item }}</li>
         </ul>
@@ -35,7 +36,7 @@
           </button>
           <button
             @click="removeOrder(order.id)"
-            class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-1 rounded"
+            class="bg-red-400 hover:bg-red-500 text-white px-4 py-1 rounded"
           >
             Remove
           </button>
@@ -61,5 +62,9 @@ function markReady(orderId) {
 
 function removeOrder(orderId) {
   orderStore.completeOrder(orderId)
+}
+function formatTime(iso) {
+  const date = new Date(iso)
+  return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
 }
 </script>
