@@ -1,22 +1,23 @@
 <template>
   <div class="min-h-screen bg-gray-100 p-6">
-    <div class="flex justify-between items-center mb-6">
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-6">
       <h1 class="text-3xl font-bold">Kitchen Dashboard</h1>
-      <router-link
-        to="/analytics"
-        class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded"
-      >
-        View Analytics
-      </router-link>
-      <router-link
-        to="/completed"
-        class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 text-sm md:px-4 md:py-2 md:text-base rounded"
-      >
-        View Completed Orders
-      </router-link>
+      <div class="flex flex-col sm:flex-row gap-2">
+        <router-link
+          to="/analytics"
+          class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded text-center"
+        >
+          View Analytics
+        </router-link>
+        <router-link
+          to="/completed"
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-center"
+        >
+          View Completed Orders
+        </router-link>
+      </div>
     </div>
 
-    <!-- Your existing grid for active orders -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
         v-for="order in orderStore.activeOrders"

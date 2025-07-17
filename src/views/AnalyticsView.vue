@@ -1,11 +1,15 @@
 <template>
   <div class="min-h-screen bg-white p-6">
-    <div class="flex justify-between items-center mb-6">
-      <h1 class="text-2xl font-bold">Order Analytics</h1>
-      <router-link to="/" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-6">
+      <h1 class="text-3xl font-bold">Order Analytics</h1>
+      <router-link
+        to="/"
+        class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-center w-full sm:w-auto"
+      >
         Back to Kitchen
       </router-link>
     </div>
+
     <BarChart :chart-data="chartData" :options="chartOptions" />
   </div>
 </template>
