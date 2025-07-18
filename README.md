@@ -1,62 +1,36 @@
-# kitchen-dashboard
+# 🍳 Kitchen Dashboard – POS Order Management
 
-This template should help get you started developing with Vue 3 in Vite.
+This is the **Kitchen Dashboard** portion of a mock omnichannel ordering system. It receives real-time food orders from a self-service kiosk and displays them for kitchen staff to prepare and manage efficiently.
 
-## Recommended IDE Setup
+## 🚀 Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- ⚡ Real-time order updates via WebSocket
+- 📋 Display of all pending and completed orders
+- 🔁 Ability to mark orders as completed or return them to the kitchen
+- 🕒 Timestamp tracking for order prep times
+- 📊 Analytics view for top-selling menu items (using Chart.js)
+- 📱 Responsive design with Tailwind CSS
+- 🧪 End-to-end testing with Cypress
 
-## Type Support for `.vue` Imports in TS
+## 📸 Screenshots
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+| Kitchen View                                         | Completed Orders                                      | Analytics                                      |
+| ---------------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------- |
+| ![Kitchen](/src/assets/images/kitchen-dashboard.png) | ![Completed](/src/assets/images/completed-orders.png) | ![Analytics](/src/assets/images/analytics.png) |
 
-## Customize configuration
+## 📦 Tech Stack
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- [Vue 3](https://vuejs.org/) with Composition API
+- [Pinia](https://pinia.vuejs.org/) for state management
+- [Socket.IO Client](https://socket.io/)
+- [Chart.js](https://www.chartjs.org/) for analytics
+- [Tailwind CSS](https://tailwindcss.com/) for UI
+- [Cypress](https://www.cypress.io/) for end-to-end testing
 
-## Project Setup
+## 🛠 Setup Instructions
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
-# kitchen-dashboard
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/kitchen-dashboard.git
+   cd kitchen-dashboard
+   ```
